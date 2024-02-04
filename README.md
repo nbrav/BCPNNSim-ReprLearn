@@ -2,7 +2,7 @@
 
 Bayesian Confidence Propagation Neural Network Simulator
 
-This repository provides code for the experiments in our paper 
+This repository provides code for the experiments in our paper: 
 
 Ravichandran, N.B., Lansner, A., and Herman, P., 2024, Unsupervised Representation Learning with Hebbian Synaptic and Structural Plasticity in Brain-Like Feedforward Neural Networks
 
