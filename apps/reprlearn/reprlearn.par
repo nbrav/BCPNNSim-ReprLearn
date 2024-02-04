@@ -1,0 +1,42 @@
+verbosity               1 
+seed                    12345
+
+Hin                     784                     # number of hypercolumns in input layer
+Min                     2                       # number of minicolumns per hypercolumn in input layer
+Hhid                    30                      # number of hypercolumns in hidden layer
+Mhid                    100                     # number of minicolumns per hypercolumn in hidden layer
+Hout                    1                       # number of hypercolumns in classifier output layer (always 1)
+Mout                    10                      # number of minicolumns per hypercolumn in output layer (class labels)
+
+binarize_input          1                       # binary code each pixel into hypercolumn with 2 minicolumns
+
+nconnih                 78                      # number of active connections from input layer to each hidden hypercolumn 
+
+bgain                   1                       # gain for bias term
+wgain                   1                       # gain for weight term
+
+updconn_interval        200                     # update connections every interval steps
+updconn_nswapmax	100                     # update connections max. number of swaps
+updconn_threshold	1.1                     # update connections threshold between min. active and max. silent
+
+taup                    0                       # (s) time-constant of p-traces, set to timestep * ntrpat if 0
+
+actfn                   softmax			# one of {softmax, stcwta, stcind, wta}
+again                   1                       # gain on activation function
+
+nstep_per_pat           3                       # number of steps to run for each patter
+
+nampl                   0.001               	# noise amplitude
+eps			0.0000001               # small value on p-traces
+
+nusupepoch              5                       # number of unsupervised training epochs
+nsupepoch               25                      # number of supervised classifier training epochs
+
+ntrpat                  1000                    # number of train patterns
+ntepat                  1000                    # number of test patterns
+
+datadir                 Data/mnist/             # directory for data files
+trimgfile               Raw/mnist_trimg.bin     # train image file
+teimgfile               Raw/mnist_teimg.bin     # test image file
+trlblfile               Raw/mnist_trlbl.bin     # train label file
+telblfile               Raw/mnist_telbl.bin     # test label file
