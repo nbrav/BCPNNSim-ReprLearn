@@ -18,10 +18,10 @@ MPIXX_FLAGS	= $(HIP_FLAGS) -lmpi -lhipblas -lhiprand ${PE_MPICH_GTL_LIBS_amd_gfx
 %.o: %.cpp $(DEPS)
 	$(CXX) -c -o $@ $< $(INCLUDE) $(FLAGS) $(HIP_FLAGS)
 
-reprlearnmain: $(APP_DIR)/reprlearn/reprlearnmain.o $(OBJS)
+reprlearn: $(APP_DIR)/reprlearn/reprlearnmain.o $(OBJS)
 	$(MPICXX) -o $(APP_DIR)/reprlearn/reprlearnmain $^ $(INCLUDE) $(FLAGS) $(MPIXX_FLAGS)
 
-all: reprlearnmain
+all: reprlearn
 
 .PHONY: clean
 clean : 
