@@ -4,7 +4,7 @@ Bayesian Confidence Propagation Neural Network Simulator
 
 This repository provides code for the experiments in the paper 
 
-Ravichandran, N.B., Lansner, A., and Herman, P., 2024, Unsupervised Representation Learning with Hebbian Synaptic and Structural Plasticity in Brain-Like Feedforward Neural Networks
+Ravichandran, N.B., Lansner, A., and Herman, P., 2024, Unsupervised Representation Learning with Hebbian Synaptic and Structural Plasticity in Brain-Like Feedforward Neural Networks. Manuscript.
 
 The code is implemented in C++, with MPI for message passing and HIP for GPU parallelization. It can also be converted easilily to CUDA and run on NVIDIA GPUs (https://rocm.docs.amd.com/projects/HIP/en/develop/user_guide/hip_porting_guide.html).
 
