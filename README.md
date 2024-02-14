@@ -22,6 +22,20 @@ mpirun -n 2 apps/reprlearn/reprlearnmain apps/reprlearn/reprlearn.par
 ```
 The code was developed and tested on Dardel supercomputer (NAISS National Academic Infrastructure for Supercomputing in Sweden) equipped AMD EPYC Zen2 CPU with AMD Instinct MI250X GPUs. The code was compiled with rocm/5.0.2, hipBLAS, hipRAND, MPICH. 
 
+The code was developed and run with MPI/HIP on Dardel supercomputer with the following SLURM script:
+
+```
+#!/bin/bash -l
+#SBATCH --account=<alloc-name>
+#SBATCH --time=1:00:00
+#SBATCH --partition=gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks=3
+export MPICH_GPU_SUPPORT_ENABLED=1
+ml rocm/5.0.2 craype-accel-amd-gfx90a
+srun apps/reprlearn/reprlearnmain apps/reprlearn/reprlearn.par 
+```
+
 # References
 
 Ravichandran, N., Lansner, A. and Herman, P., 2023, Unsupervised Representation Learning with Hebbian Synaptic and Structural Plasticity in Brain-Like Feedforward Neural Networks. Available at SSRN 4613605.
